@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import AddTask from './Components/AddTask';
 import ShowTasks from './Components/ShowTasks';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 

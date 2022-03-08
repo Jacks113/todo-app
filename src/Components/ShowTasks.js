@@ -1,15 +1,36 @@
+import { Table } from "react-bootstrap";
+
 export default function ShowTasks(props){
 
     const {taskList} = props;
     return (
         <div className="tasks-container">
-            <ul className="task-list">
+
+            <Table striped bordered hover >
+                <thead>
+                    <tr>
+                    <th>Time and date</th>
+                    <th>Task</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
                 {
                 taskList.map((task, index) => {
                     return (
-                        <li key = {index}><span>{task.timestamp}</span> <span>  {task.data}</span></li>
+                        <tr key = {index}>
+                            <td>{task.timestamp}</td>
+                            <td>{task.data}</td>
+                        </tr>
                     )
                 })}
+
+                </tbody>
+            </Table>
+
+            <ul className="task-list">
+                
             </ul>
         </div>
     )
