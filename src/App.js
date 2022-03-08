@@ -7,20 +7,20 @@ import ShowTasks from './Components/ShowTasks';
 
 function App() {
 
-  const [tasks, setTasks] = useState([]);
+  const [allTasks, setAllTasks] = useState([]);
 
   const addNewTask = (task) => {
     const tempDate = new Date();
 
     const timeStamp = tempDate.getDate() + "." + (tempDate.getMonth() + 1).toString() + "." + tempDate.getFullYear().toString() + "." + " " + tempDate.getHours().toString() +  ":" + tempDate.getMinutes().toString() + ":" + tempDate.getSeconds();
     
-    setTasks(
-      tasks => [...tasks, {
+    setAllTasks(
+      allTasks => [...allTasks, {
         timestamp:timeStamp,
         data: task
       }]
     )
-    console.log(tasks);
+    console.log(allTasks);
     
   }
 
@@ -31,7 +31,7 @@ function App() {
         <h1>Simple to-do web app</h1>
       </header>
       <AddTask addNewTask = {addNewTask}/>
-      {/* <ShowTasks/> */}
+      { allTasks.length > 0 ?  <ShowTasks taskList = {allTasks}/> : "" }
     </div>
   );
 }
