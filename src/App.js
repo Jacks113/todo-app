@@ -12,7 +12,10 @@ function App() {
   const addNewTask = (task) => {
     const tempDate = new Date();
 
-    const timeStamp = tempDate.getDate() + "." + (tempDate.getMonth() + 1).toString() + "." + tempDate.getFullYear().toString() + "." + " " + tempDate.getHours().toString() +  ":" + tempDate.getMinutes().toString() + ":" + tempDate.getSeconds();
+    const time = tempDate.getHours().toString() +  `:` + tempDate.getMinutes().toString() + `:` + tempDate.getSeconds();
+    const date = tempDate.getDate() + `.` + (tempDate.getMonth() + 1).toString() + `.` + tempDate.getFullYear().toString() + `.` + ` `;
+    
+    const timeStamp = time + date;
     
     setAllTasks(
       allTasks => [...allTasks, {

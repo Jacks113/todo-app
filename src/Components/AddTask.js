@@ -5,10 +5,6 @@ export default function AddTask(props){
     const [task, setTask] = useState("");
     const {addNewTask} = props;
 
-    const updateInput = e => {
-        setTask(e.target.value);
-
-    }
 
     const sendTask = (e) => {
         e.preventDefault();
