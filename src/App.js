@@ -37,7 +37,7 @@ function App() {
       return allTasks;
     });
 
-    console.log(allTasks);
+    // console.log(allTasks);
   }
 
 
