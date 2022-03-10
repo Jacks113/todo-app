@@ -1,8 +1,18 @@
+import React from "react";
 import { Table } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
-export default function ShowTasks(props){
+export default class ShowTasks extends React.Component{
 
-    const {taskList} = props;
+    render(){
+        const {taskList, removeTask} = this.props;
+        
+
+        const handleClick = (index) => {
+            alert("Clicked element on position: " + JSON.stringify(index));
+            removeTask(JSON.stringify(index));
+        }
+
     return (
         <div className="tasks-container">
 
@@ -22,6 +32,7 @@ export default function ShowTasks(props){
                         <tr key = {index}>
                             <td>{task.timestamp}</td>
                             <td>{task.data}</td>
+                            <td><Button onClick={e => handleClick(index)}>X</Button></td>
                         </tr>
                     )
                 })}
@@ -34,4 +45,6 @@ export default function ShowTasks(props){
             </ul>
         </div>
     )
+    }
+    
 }
