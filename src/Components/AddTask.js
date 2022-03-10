@@ -17,6 +17,6 @@ export default function AddTask(props){
     return (
         <form onSubmit={sendTask} className="task-input">
             <input type="text" onChange={(e) => setTask(e.target.value)} autoFocus={true} value={task}/>
-            <button type="submit">Add task.</button>
+            <button type="submit">Add task</button>
         </form>)
 }
