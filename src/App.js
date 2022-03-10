@@ -1,8 +1,10 @@
-
 import { useState } from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 import './App.css';
 import AddTask from './Components/AddTask';
 import ShowTasks from './Components/ShowTasks';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -13,10 +15,10 @@ function App() {
   const addNewTask = (task) => {
     const tempDate = new Date();
 
-    const time = tempDate.getHours().toString() +  `:` + tempDate.getMinutes().toString() + `:` + tempDate.getSeconds();
+    const time = tempDate.getHours().toString() +  `:` + ("0" + tempDate.getMinutes().toString()).slice(-2) + `:` + ("0" + tempDate.getSeconds()).slice(-2);
     const date = tempDate.getDate() + `.` + (tempDate.getMonth() + 1).toString() + `.` + tempDate.getFullYear().toString() + `.` + ` `;
     
-    const timeStamp = time + date;
+    const timeStamp =  date + " " + time;
     
     setAllTasks(
       allTasks => [...allTasks, {
@@ -42,9 +44,17 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Simple to-do web app</h1>
+
+      <HelmetProvider>
+        <Helmet>
+          <title>Simple TO DO app</title>
+        </Helmet>
+        <header>
+          <h1>Simple to-do web app</h1>
       </header>
+      </HelmetProvider>
+
+      
       <AddTask addNewTask = {addNewTask}/>
       { allTasks.length > 0 ?  <ShowTasks removeTask = {removeTask} taskList = {allTasks} /> : "" }
     </div>
