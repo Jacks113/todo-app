@@ -12,7 +12,7 @@ function App() {
 
   const [allTasks, setAllTasks] = useState([]);
 
-  const addNewTask = (task, complete) => {
+  const addNewTask = (task) => {
     const tempDate = new Date();
 
     const time = tempDate.getHours().toString() +  `:` + ("0" + tempDate.getMinutes().toString()).slice(-2) + `:` + ("0" + tempDate.getSeconds()).slice(-2);
@@ -20,13 +20,13 @@ function App() {
     
     const timeStamp =  date + " " + time;
 
-    const complete = complete;
+    // const complete = complete;
     
     setAllTasks(
       allTasks => [...allTasks, {
         timestamp:timeStamp,
         data: task,
-        completed: complete
+        // completed: complete
       }]
     )
     

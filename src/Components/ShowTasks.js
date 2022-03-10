@@ -1,6 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 export default class ShowTasks extends React.Component{
 
@@ -13,8 +14,8 @@ export default class ShowTasks extends React.Component{
             removeTask(JSON.stringify(index));
         }
 
-        const handleCheck = () => {
-
+        const handleCheck = (e) => {
+            console.log(e.target.checked);
         }
 
     return (
@@ -41,9 +42,8 @@ export default class ShowTasks extends React.Component{
                             <td><Button variant="danger" onClick={e => handleClick(index)}>X</Button></td>
                             <td>
                                 <Form>
-                                    <Form.Check 
+                                    <Form.Check onChange={handleCheck}
                                         type="switch"
-                                        label="Completed"
                                     />
                                 </Form>
                             </td>
