@@ -32,7 +32,7 @@ export default class ShowTasks extends React.Component{
                         <tr key = {index}>
                             <td>{task.timestamp}</td>
                             <td>{task.data}</td>
-                            <td><Button onClick={e => handleClick(index)}>X</Button></td>
+                            <td><Button variant="danger" onClick={e => handleClick(index)}>X</Button></td>
                         </tr>
                     )
                 })}
