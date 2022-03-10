@@ -22,7 +22,7 @@ export default function AddTask(props){
                 <Form.Label>Enter a new task</Form.Label>
                 <Form.Control type="text" placeholder="New Task..." onChange={(e) => setTask(e.target.value)} autoFocus={true} value={task}/>
             </Form.Group> 
-                <Button type="submit">Add task</Button>
+            <Button type="submit">Add task</Button>
         </Form>
         )
 

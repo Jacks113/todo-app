@@ -13,6 +13,10 @@ export default class ShowTasks extends React.Component{
             removeTask(JSON.stringify(index));
         }
 
+        const handleCheck = () => {
+
+        }
+
     return (
         <div className="tasks-container">
 
@@ -21,6 +25,7 @@ export default class ShowTasks extends React.Component{
                     <tr>
                     <th>Date and time</th>
                     <th>Task</th>
+                    <th></th>
                     <th></th>
                     </tr>
                 </thead>
@@ -34,6 +39,14 @@ export default class ShowTasks extends React.Component{
                             <td>{task.timestamp}</td>
                             <td>{task.data}</td>
                             <td><Button variant="danger" onClick={e => handleClick(index)}>X</Button></td>
+                            <td>
+                                <Form>
+                                    <Form.Check 
+                                        type="switch"
+                                        label="Completed"
+                                    />
+                                </Form>
+                            </td>
                         </tr>
                     )
                 })}
