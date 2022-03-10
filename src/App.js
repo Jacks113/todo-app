@@ -30,7 +30,7 @@ function App() {
   }
 
   const removeTask = (index) => {
-    console.log("removing element with index: " + index);
+    // console.log("removing element with index: " + index);
     setAllTasks(prevState => {
       const allTasks = [...prevState];
       allTasks.splice(index, 1);

@@ -9,7 +9,7 @@ export default class ShowTasks extends React.Component{
         
 
         const handleClick = (index) => {
-            alert("Clicked element on position: " + JSON.stringify(index));
+            // alert("Clicked element on position: " + JSON.stringify(index));
             removeTask(JSON.stringify(index));
         }
 
