@@ -36,3 +36,21 @@
   position: relative;
   margin: auto;
 }
+
+.tasks-container{
+  width: 99%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.table-hover tbody tr:hover td {
+  background: rgba(1,110,253, 0.5);
+  color: antiquewhite;
+}
+
+.tasks-container .table thead{
+  background-color: #72AD4B;
+  color: whitesmoke;
+  border: none;
+}
+

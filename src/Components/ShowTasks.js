@@ -16,11 +16,12 @@ export default class ShowTasks extends React.Component{
     return (
         <div className="tasks-container">
 
-            <Table striped bordered hover >
-                <thead>
+            <Table hover>
+                <thead color="blue">
                     <tr>
-                    <th>Time and date</th>
+                    <th>Date and time</th>
                     <th>Task</th>
+                    <th></th>
                     </tr>
                 </thead>
 
